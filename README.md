@@ -39,8 +39,7 @@ Step 2: Call the Xola API with params:
     
 ```javascript
 function getExperienceData(key) {
-    return axios.get('https://sandbox.xola.com/api/experiences?geo=37.7756,-122.4193,20
-                        &price=75&category=Sailing&limit=1', 
+    return axios.get('https://sandbox.xola.com/api/experiences?geo=37.7756,-122.4193,20&price=75&category=Sailing&limit=1', 
         {
             headers: {
                 'X-API-KEY' : key,
