@@ -2,8 +2,8 @@ const axios = require("axios");
 
 const URL = 'https://sandbox.xola.com/api/users/me';
 const EXP_URL = 'https://sandbox.xola.com/api/experiences';
-const USERNAME = 'akshay.gulhane@outlook.com';
-const PASSWORD = 'password123';
+const USERNAME = '<email>';
+const PASSWORD = '<password>';
 
 var API_KEY = '';
 
@@ -38,7 +38,6 @@ function getExperienceData(key) {
     .then(function(response) {
         let len = response.data.data.length;
         for(var i = 0; i < len; i++) {
-            //console.log(response.data.data[i]);
             console.log("Name => " + response.data.data[i].name);
             console.log("Price => " + response.data.data[i].price + "\n");
         }
