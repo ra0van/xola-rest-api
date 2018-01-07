@@ -32,6 +32,7 @@ function getAPIKey() {
 ```
 
 Step 2: Call the Xola API with params:
+
     1. `geo` : `'lat', 'lon', 'limit'` (in this example: `geo=37.7756,-122.4193,20`)
     2. `price` : `upper limit` (in this example: `price=75`)
     3. `category` : `category of event` (in this example: `category=Sailing`)
