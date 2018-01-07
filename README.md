@@ -1,10 +1,14 @@
 # XOLO REST API Example
 
-### I'm using axios to make request because it's easy to handle async calls
+### Task: Find me a fun Sailing activity within 20km of San Francisco which costs less than $75.
+
+#### I'm using axios to make request because it's easy to handle async calls
 
 `const axios = require("axios");`
 
+#### Implementation 
 
+Step 1: Get the secret API Key
 
 ```javascript
 function getAPIKey() {
@@ -27,13 +31,19 @@ function getAPIKey() {
 }
 ```
 
-//Find me a fun Sailing activity within 20km of San Francisco which costs less than $75.
-
+Step 2: Call the Xola API with params:
+    1. `geo` : `'lat', 'lon', 'limit'` (in this example: `geo=37.7756,-122.4193,20`)
+    2. `price` : `upper limit` (in this example: `price=75`)
+    3. `category` : `category of event` (in this example: `category=Sailing`)
+    4. `limit` : `number of records in response` (in this example: `limit=1`)
+    
 ```javascript
 function getExperienceData(key) {
-    return axios.get('https://sandbox.xola.com/api/experiences?geo=37.7756,-122.4193,20&price=75&category=Sailing&limit=1', {
-        headers: {
-            'X-API-KEY' : key,
+    return axios.get('https://sandbox.xola.com/api/experiences?geo=37.7756,-122.4193,20
+                        &price=75&category=Sailing&limit=1', 
+        {
+            headers: {
+                'X-API-KEY' : key,
         }
     })
     .then(function(response) {
@@ -45,7 +55,7 @@ function getExperienceData(key) {
 }
 ```
 
-### Response
+### Sample Response
 
 ```javascript
 Name => San Francisco City Lights Night Cruise
